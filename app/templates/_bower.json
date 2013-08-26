@@ -1,0 +1,12 @@
+{
+  "name": "<%= _.slugify(expName) %>",
+  "version": "0.0.0",
+  "dependencies": {<% if (useFontAwesome) { %>
+    "font-awesome": "~3.2.1",<% } %><% if (useJade) { %>
+    "jade": "~0.35.0",<% } %><% if (useLess) { %>
+    "lesshat": "~1.1.2",<% } %>
+    "jquery": "~2.0.3",<% if (useNunjucks) { %>
+    "nunjucks": "git://github.com/jlongster/nunjucks.git",<% } %>
+    "requirejs": "~2.1.8"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "<%= _.slugify(expName) %>",
+  "version": "0.0.0",
+  "dependencies": {
+    "bower": "~1.1.0",
+    "express": "~3.3.3",
+    "habitat": "~0.4.2"<% if (useLess) { %>,
+    "less-middleware": "~0.1.12"<% } %><% if (useJade) { %>,
+    "jade": "~0.35.0"<% } %><% if (useNunjucks) { %>,
+    "nunjucks": "~0.1.9"<% } %><% if (useStylus) { %>,
+    "nib": "~1.0.1",
+    "stylus": "~0.37.0"<% } %>
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install"
+  }
+}
