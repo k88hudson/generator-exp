@@ -85,9 +85,13 @@ ExpGenerator.prototype.app = function app() {
   this.mkdir('routes');
 
   this.template('_app.js', 'app.js');
+  this.template('routes/index.js', 'routes/index.js');
 };
 
 ExpGenerator.prototype.frontEnd = function frontEnd() {
   this.mkdir('public');
   this.template('public/main.js', 'public/main.js');
+  if (this.useLess) {
+    this.template('public/main.less', 'public/main.less');
+  }
 };

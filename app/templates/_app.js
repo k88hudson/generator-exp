@@ -47,19 +47,20 @@ app.use(stylus.middleware({
   compile: stylusCompile
 }));
 <% } %>
+var cacheSettings = optimize ? { maxAge: '31556952000' } : undefined; // one year;
+
 app.use(express.static(__dirname + '/public', {
   maxAge: '31556952000' // one year
 }));
 
-app.use('/bower_components', express.static(__dirname + '/bower_components', {
-  maxAge: '31556952000' // one year
-}));
-
-app.use('/views', express.static(__dirname + '/views', {
-  maxAge: '31556952000' // one year
-}));
+app.use(express.static(tmpDir, cacheSettings));
+app.use(express.static(__dirname + '/public', cacheSettings));
+app.use('/bower_components', express.static(__dirname + '/bower_components', cacheSettings));
+app.use('/views', express.static(__dirname + '/views', cacheSettings));
 
 app.use(app.router);
+
+app.get('/', routes.index);
 
 app.listen(env.get('PORT'), function () {
   console.log('Now listening on http://localhost:%d', env.get('PORT'));
