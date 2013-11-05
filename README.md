@@ -1,4 +1,7 @@
-## An generator for yeoman
+## Exp
+An express/nunjucks/less/requirejs yeoman generator for quick prototyping.
+
+Ready to deploy to Heroku in minutes!
 
 Uses:
 
@@ -23,4 +26,12 @@ npm install -g generator-exp
 mkdir my-app-name
 cd my-app-name
 yo exp
+```
+
+## Deployment
+
+Use the nodejs-grunt buildpack:
+```
+heroku create <%= _.slugify(expName) %> --buildpack https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt
+git push heroku master
 ```
