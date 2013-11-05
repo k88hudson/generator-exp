@@ -1,22 +1,21 @@
 {
-  "name": "<%= _.slugify(expName) %>",
+  "name": "stuff",
   "version": "0.0.0",
   "dependencies": {
-    "bower": "~1.1.0",
-    "express": "~3.3.3",
-    "habitat": "~0.4.2",
-    "less-middleware": "~0.1.12",<% if (useJade) { %>
-    "jade": "~0.35.0",<% } %><% if (useNunjucks) { %>
-    "nunjucks": "git://github.com/jlongster/nunjucks.git#acd1a7b49e0547ab86bb7e5596fd89f53974288f",<% } %>
+    "bower": "~1.2.7",
+    "express": "~3.4.4",
+    "habitat": "~0.4.2",<% if (useJade) { %>
+    "jade": "~0.35.0",
+    "grunt-contrib-jade": "~0.8.0",<% } %><% if (useNunjucks) { %>
+    "nunjucks": "1.0.0",
+    "grunt-nunjucks": "~0.1.0",<% } %>
     "grunt": "~0.4.1",
-    "grunt-cli": "0.1.0",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-watch": "~0.5.1",
-    "grunt-contrib-connect": "~0.3.0",
-    "grunt-contrib-jade": "~0.8.0",
-    "grunt-contrib-less": "~0.7.0",
+    "grunt-cli": "0.1.10",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-less": "~0.8.1",
     "grunt-contrib-requirejs": "~0.4.1",
-    "grunt-develop": "~0.2.1",
+    "grunt-develop": "~0.2.2",
     "grunt-contrib-copy": "~0.4.1"
   },
   "scripts": {

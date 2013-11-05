@@ -43,10 +43,14 @@ module.exports = function (grunt) {
         ],
         tasks: ['jshint', 'copy'],
         options: { nospawn: true }
-      },<% if (useJade) { %>
+      }<% if (useJade) { %>,
       jade: {
         files: ['src/**/*.jade'],
         tasks: ['jade:compileJSTemplates']
+      }<% } else if (useNunjucks) { %>,
+      nunjucks: {
+        files: ['src/**/*.html'],
+        tasks: ['nunjucks:precompile']
       }<% } %>
     },
     copy: {
@@ -81,7 +85,7 @@ module.exports = function (grunt) {
       }
     },<% } else if (useNunjucks) { %>
     nunjucks: {
-      files: {
+      options: {
         src: 'src/**/*.html',
         dest: 'dist/templates.js'
       }
@@ -106,7 +110,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-develop');
   grunt.loadNpmTasks('grunt-contrib-watch');<% if (useJade) { %>
   grunt.loadNpmTasks('grunt-contrib-jade');}<% } %><% if (useNunjucks) { %>
-  grunt.loadTasks('./lib/grunt');<% } %>
+  grunt.loadNpmTasks('grunt-nunjucks');<% } %>
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
 

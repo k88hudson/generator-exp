@@ -32,8 +32,8 @@ ExpGenerator.prototype.askFor = function askFor() {
     name: 'templateEngine',
     message: 'Which templating engine do you prefer?',
     choices: [
+      "nunjucks",
       "jade",
-      "nunjucks"
     ],
     default: "nunjucks"
   }, {
@@ -74,12 +74,6 @@ ExpGenerator.prototype.app = function app() {
   this.template('_app.js', 'app.js');
   this.template('routes/index.js', 'routes/index.js');
 
-  // For precompiling
-  if (this.useNunjucks) {
-    this.mkdir('lib');
-    this.mkdir('lib/grunt');
-    this.copy('grunt-nunjucks.js', 'lib/grunt/grunt-nunjucks.js');
-  }
 };
 
 ExpGenerator.prototype.frontEnd = function frontEnd() {
