@@ -1,5 +1,5 @@
-# Choisissez un port
-export PORT=1989
+# Choose a port
+PORT=1989
 
-# Optimize and compress CSS/JS ja?
-export OPTIMIZE=false
+# Optimize and compress CSS/JS?
+OPTIMIZE=false
