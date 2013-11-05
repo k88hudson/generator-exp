@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         src: 'src/**/*.less',
         dest: 'dist/main.css',
         options: {
-          dumpLineNumbers: 'comments'
+          sourceMap: true
         }
       },
       production: {
