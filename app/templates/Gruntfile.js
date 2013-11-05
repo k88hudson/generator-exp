@@ -85,7 +85,7 @@ module.exports = function (grunt) {
       }
     },<% } else if (useNunjucks) { %>
     nunjucks: {
-      options: {
+      precompile: {
         src: 'src/**/*.html',
         dest: 'dist/templates.js'
       }
