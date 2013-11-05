@@ -32,6 +32,6 @@ yo exp
 
 Use the nodejs-grunt buildpack:
 ```
-heroku create <%= _.slugify(expName) %> --buildpack https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt
+heroku create {{your app name}} --buildpack https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt
 git push heroku master
 ```
