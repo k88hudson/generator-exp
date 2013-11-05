@@ -1,9 +1,9 @@
-## Generator-exp
+### Generator-exp
 An express/nunjucks/less/requirejs generator for quick prototyping.
 
-This is an example of what gets created: [generator-exp](https://github.com/k88hudson/exp-example)
-
 Ready to deploy to Heroku in minutes!
+
+See [an example](https://github.com/k88hudson/exp-example) of what gets generated.
 
 Uses:
 
