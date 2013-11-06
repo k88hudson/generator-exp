@@ -1,5 +1,5 @@
 {
-  "name": "stuff",
+  "name": "<%= _.slugify(expName) %>",
   "version": "0.0.0",
   "dependencies": {
     "bower": "~1.2.7",
