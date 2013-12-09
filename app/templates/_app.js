@@ -1,7 +1,7 @@
 var express = require('express');
 var Habitat = require('habitat');<% if (useNunjucks) { %>
 var nunjucks = require('nunjucks');<% } %>
-var routes = require('./routes')();
+var routes = require('./routes');
 
 Habitat.load();
 
@@ -29,8 +29,7 @@ app.use(express.static(__dirname + '/public', cacheSettings));
 app.use('/bower_components', express.static(__dirname + '/bower_components', cacheSettings));
 
 app.use(app.router);
-
-app.get('/', routes.index);
+routes(app);
 
 app.listen(env.get('PORT'), function () {
   console.log('Now listening on http://localhost:%d', env.get('PORT'));
