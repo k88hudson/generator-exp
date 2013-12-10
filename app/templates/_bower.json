@@ -2,10 +2,10 @@
   "name": "<%= _.slugify(expName) %>",
   "version": "0.0.0",
   "dependencies": {<% if (useFontAwesome) { %>
-    "font-awesome": "~3.2.1",<% } %><% if (useJade) { %>
-    "jade": "~0.35.0",<% } %>
-    "jquery": "~2.0.3",<% if (useNunjucks) { %>
+    "font-awesome": "4.0.3",<% } %><% if (useJade) { %>
+    "jade": "0.35.0",<% } %>
+    "jquery": "2.0.3",<% if (useNunjucks) { %>
     "nunjucks": "1.0.0",<% } %>
-    "requirejs": "~2.1.8"
+    "requirejs": "2.1.9"
   }
 }

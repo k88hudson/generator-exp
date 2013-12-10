@@ -15,7 +15,7 @@ var nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirna
 var cacheSettings = optimize ? { maxAge: '31556952000' } : undefined; // one year;
 
 app.locals({
-  OPTIMIZE: env.get('OPTIMIZE')
+  OPTIMIZE: optimize
 });
 <% if (useNunjucks) { %>
 nunjucksEnv.express(app);<% } %>
