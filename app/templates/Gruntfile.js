@@ -69,7 +69,8 @@ module.exports = function (grunt) {
         'src/**/*.js'
       ],
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc',
+        force: true
       }
     },<% if (useJade) { %>
     jade: {

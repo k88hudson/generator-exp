@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hi</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="main.css">
-  </head>
-  <body>
-    <p>Hi</p>
-    <p><a href="#"><% if (useFontAwesome) { %><span class="icon-home"></span> <% } %>Home</a></p>
-    <script src="/bower_components/requirejs/require.js" data-main="main"></script>
-  </body>
-</html>
+{% extends 'base/layout/html' %}
+
+{% block body%}
+    <h1><%= _.slugify(expName) %></h1>
+    <p><a href="#"><% if (useFontAwesome) { %><span class="fa fa-home"></span> <% } %>Home</a></p>
+{% block body%}
+
+{% block requirejs %}{% endblock %}

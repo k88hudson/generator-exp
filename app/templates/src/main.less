@@ -1,41 +1,25 @@
 /*********************************************************
-* Colours
+* Utilities and normalization
 */
-@yellow: #ffcd36;
-@lightyellow: #fff2cc;
-@darkyellow: #eab514;
-@orange: #ee8950;
-@darkgreen: #328f70;
-@blue: #27aae1;
-@red: #D93B3B;
-@green: #3fb58e;
-@grey: #4d4e53;
-@lightgrey: #e3eaee;
-@midgrey: #ddd;
-@white: #fff;
-@black: #000;
+@import "less/colors";
+@import "less/breakpoints";
+@import "less/mixins";
+@import (less) "bower_components/normalize/normalize.css";
 
 /*********************************************************
-* Breakpoints
-*/
-@width-small: 320px;
-@width-medium: 480px;
-@width-large: 960px;
-@width-xlarge: 1540px;
-
-/*********************************************************
-* Bower Imports
+* UI
 */
 
-// Normalize
-@import "bower_components/normalize/normalize.css";
-
-<% if (useFontAwesome) { %>
-// Font Awesome
+<% if (useFontAwesome) { %>// Font Awesome
 // Use http://fortawesome.github.io/Font-Awesome/cheatsheet/ as a guide
 @import "bower_components/font-awesome/less/font-awesome";
 @fa-font-path: "/bower_components/font-awesome/fonts";<% } %>
 
+
+/*********************************************************
+* Main
+*/
+
 body {
-  font-family: 'Alegreya Sans', sans-serif;
+  font-family: 'Merriweather', sans-serif;
 }

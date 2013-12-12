@@ -80,12 +80,26 @@ ExpGenerator.prototype.frontEnd = function frontEnd() {
   this.mkdir('src');
   this.mkdir('dist');
   this.mkdir('public');
+
+  // VIEWS
+  this.mkdir('src/views');
   if (this.useNunjucks) {
+    this.mkdir('src/views');
     this.template('src/index.html', 'src/index.html');
+    this.template('src/views/layout.html', 'src/base/layout.html');
   }
   if (this.useJade) {
     this.template('src/index.jade', 'src/index.jade');
   }
+
+  // JS
+  this.mkdir('src/js');
   this.template('src/main.js', 'src/main.js');
+
+  // LESS
+  this.mkdir('src/less');
   this.template('src/main.less', 'src/main.less');
+  this.template('src/less/colours.less', 'src/less/colours.less');
+  this.template('src/less/mixins.less', 'src/less/mixins.less');
+  this.template('src/less/breakpoints.less', 'src/less/breakpoints.less');
 };
