@@ -1,8 +1,8 @@
-{% extends 'base/layout/html' %}
+{% extends 'src/base/layout.html' %}
 
 {% block body%}
     <h1><%= _.slugify(expName) %></h1>
     <p><a href="#"><% if (useFontAwesome) { %><span class="fa fa-home"></span> <% } %>Home</a></p>
-{% block body%}
+{% endblock %}
 
 {% block requirejs %}{% endblock %}

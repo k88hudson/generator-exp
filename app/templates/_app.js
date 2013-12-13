@@ -9,7 +9,7 @@ var app = express();
 var env = new Habitat();
 var optimize = env.get('OPTIMIZE');
 <% if (useNunjucks) { %>
-var nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname + '/src'), {
+var nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname), {
   autoescape: true
 });<% } %>
 var cacheSettings = optimize ? { maxAge: '31556952000' } : undefined; // one year;
@@ -21,7 +21,7 @@ app.locals({
 nunjucksEnv.express(app);<% } %>
 <% if (useJade) { %>
 app.set('view engine', 'jade');
-app.set('views', __dirname + '/src');<% } %>
+app.set('views', __dirname);<% } %>
 app.use(express.logger('dev'));
 app.use(express.compress());
 app.use(express.static(__dirname + '/dist', cacheSettings));
